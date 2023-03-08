@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon"  href="./images/favicon-32x32.png">
+  <title>FAQ ACCORDION CARD MAIN</title>
+</head>
+<body >
+    <div id="app" class=" w-full h-screen bg-purple-500">
+
+    
+    <div class=" w-9/12   flex flex-row bg-white rounded-md mx-28 " style="background-image: url('./images/bg-pattern-desktop.png');">
+      <div class="flex flex-row w-full h-1/2 ">
+        <div class="flex flex-row w-2/5 ">
+          <img src="./images/illustration-box-desktop.png" alt="" class=" w-28 h-28 mt-40 z-50 -ml-20">
+          <img src="./images/illustration-woman-online-desktop.png" alt="" class="w-52 h-72 -ml-12  my-10">
+        </div>
+
+        <div class="flex flex-col w-3/5 bg-white m-10">
+          <div class="text-2xl font-bold  py-6 mx-8">FAQ</div>
+          <div  class="flex flex-row justify-between mx-8 my-2">
+            <div class="flex flex-col">
+            <p :class="['text-xs text-gray-400 hover:text-orange-400 cursor-pointer' , 
+            isClickOnArrow ? 'font-bold mb-4 text-black' : ''
+            
+            ]">How many team members can I invite?
+            </p>
+            <p :class="['text-gray-400 text-xs py-2 ' ,
+            isClickOnArrow ? '' : 'hidden'
+            ]">No more than 2GB.All files in your account must fit your allocated storage space</p>
+              </div>
+              
+              
+          
+          
+            <div @click="atClickOnArrow()" :class="['cursor-pointer' , 
+            
+            
+            ]">
+            <svg id="wow2" @click="rotate2()" width="10" height="7" xmlns="http://www.w3.org/2000/svg"><path d="M1 .799l4 4 4-4" stroke="#F47B56" stroke-width="2" fill="none" fill-rule="evenodd"  /></svg>
+          </div>
+          </div>
+          <hr class="text-gray-400 mx-8 my-2 h-0.5">
+          <div  class="flex flex-row justify-between mx-8 my-3  cursor-pointer">
+            <div class="flex flex-col">
+            <p :class="['text-xs text-gray-400 hover:text-orange-400 cursor-pointer' , 
+            isClickOnArrow1 ? 'font-bold mb-4 text-black': ''
+            ]">What is the Maximum size of the upload File?</p>
+              <p :class="['text-gray-400 text-xs py-2 ' ,
+              isClickOnArrow1 ? '' : 'hidden'
+              ]">No more than 2GB.All files in your account must fit your allocated storage space</p>
+           
+          </div>
+          <div @click="atClickOnArrow1()">
+            <svg @click="rotate()" id="wow"  width="10" height="7" xmlns="http://www.w3.org/2000/svg"><path d="M1 .799l4 4 4-4" stroke="#F47B56" stroke-width="2" fill="none" fill-rule="evenodd"  /></svg>
+          </div>
+          </div>
+          <hr class="text-gray-400 mx-8 my-2 h-0.5">
+          <div class="flex flex-row justify-between mx-8 my-3 cursor-pointer">
+            <p :class="['text-xs text-gray-400 hover:text-orange-400 cursor-pointer' ,
+            isClickOnArrow2 ? 'font-bold text-black mb-4' : ''
+            
+            ]">How do I reset my password?</p>
+            <svg @click="atClickOnArrow2" width="10" height="7" xmlns="http://www.w3.org/2000/svg"><path d="M1 .799l4 4 4-4" stroke="#F47B56" stroke-width="2" fill="none" fill-rule="evenodd"  /></svg>
+            
+          </div>
+          <hr class="text-gray-400 mx-8 my-2 h-0.5">
+          <div class="flex flex-row justify-between mx-8 my-3 cursor-pointer">
+            <p :class="['text-xs text-gray-400 hover:text-orange-400 cursor-pointer' , 
+            isClickOnArrow3 ? 'text-black font-bold mb-4': ''
+            ]"> Can I cancel my subscription?</p>
+            <svg @click="atClickOnArrow3" width="10" height="7" xmlns="http://www.w3.org/2000/svg"><path d="M1 .799l4 4 4-4" stroke="#F47B56" stroke-width="2" fill="none" fill-rule="evenodd"  /></svg>
+            
+          </div>
+          <hr class="text-gray-400 mx-8 my-2 h-0.5">
+          <div class="flex flex-row justify-between mx-8 my-3 cursor-pointer">
+            <p :class="['text-xs text-gray-400 hover:text-orange-400 cursor-pointer' , 
+            isClickOnArrow4 ? 'font-bold text-black mb-4' : ''
+            ]">Do you provide additional features?</p>
+            <svg @click="atClickOnArrow4" width="10" height="7" xmlns="http://www.w3.org/2000/svg"><path d="M1 .799l4 4 4-4" stroke="#F47B56" stroke-width="2" fill="none" fill-rule="evenodd"  /></svg>
+            
+          </div>
+          <hr class="text-gray-400 mx-8 my-2 h-0.5">
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+</body>
+</html>
+
+
+<script>
+  new Vue({
+    el:'#app',
+    data:{
+      isClickOnArrow:false,
+      isClickOnArrow1 : false,
+      isClickOnArrow2:false,
+      isClickOnArrow3:false,
+      isClickOnArrow4:false
+    },
+
+    methods: {
+      atClickOnArrow(){
+        
+        this.isClickOnArrow=true;
+      
+      },
+      atClickOnArrow1(){
+        
+        this.isClickOnArrow1=true;
+      },
+      atClickOnArrow2(){
+        
+        this.isClickOnArrow2=true;
+      },
+      atClickOnArrow3(){
+        
+        this.isClickOnArrow3=true;
+      },
+      atClickOnArrow4(){
+        
+        this.isClickOnArrow4=true;
+      },
+      rotate(){
+       var a= document.getElementById("wow");
+       a.style.transform="rotate(180deg)";
+       
+      },
+      rotate2(){
+       var a= document.getElementById("wow2");
+       a.style.transform="rotate(180deg)";
+       
+      },
+    },
+  })
+</script>
